@@ -7,43 +7,8 @@ void main() {
 
 }
 
-class DisableButtonDemo extends StatefulWidget {
-  const DisableButtonDemo({Key? key}) : super(key: key);
-  @override
-  State<DisableButtonDemo> createState() => _DisableButtonDemoState();
-}
-class _DisableButtonDemoState extends State<DisableButtonDemo> {
-  final myController = TextEditingController();
-  bool submit = false;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    myController.addListener(() {
-      setState(() {
-        submit = myController.text.isNotEmpty;
-      });
-    });
-  }
-  @override
-  void dispose() {
-    // Clean up the controller when the widget is disposed.
-    myController.dispose();
-    super.dispose();
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return   ElevatedButton(
-        onPressed: submit ? () => submitData : null,
-    child: Text('Submit',
-            style: TextStyle(fontSize: 24))
-    );
-  }
-  submitData(){}
 
-  }
 
 
 
