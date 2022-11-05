@@ -80,10 +80,12 @@ class MyApp extends StatelessWidget {
 
 
 class LogIn extends StatefulWidget {
+
   @override
   _LogIn createState() => _LogIn();
 }
 class _LogIn extends State<LogIn> {
+  var seciliButon;
   final _formKey=GlobalKey<FormState>();
   var email,pssw;
   @override
@@ -114,7 +116,7 @@ class _LogIn extends State<LogIn> {
           ),
           SizedBox(height: 15),
           TextFormField(
-            controller: myController,
+
 
               decoration: const InputDecoration(
 
@@ -135,7 +137,21 @@ class _LogIn extends State<LogIn> {
               });
             },
           ),
-          DisableButtonDemo()
+          TextButton(
+              onPressed: (){
+                setState((){ seciliButon="Log In";
+
+                });
+                    },
+            child: Container(
+              width: 50,
+              height: 30,
+              color: seciliButon=="Log In" ? Colors.blueGrey:Colors.blueAccent,
+              child: Text("Log In"),
+
+
+          ),
+          )
 
     ]),);
   }
